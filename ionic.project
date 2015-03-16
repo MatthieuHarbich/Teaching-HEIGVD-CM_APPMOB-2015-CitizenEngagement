@@ -1,4 +1,10 @@
 {
   "name": "citizen-engagement",
-  "app_id": ""
+  "app_id": "d76d3e96",
+  "proxies": [
+    {
+      "path": "/api-proxy",
+      "proxyUrl": "https://citizen-engagement.herokuapp.com/api"
+    }
+  ]
 }

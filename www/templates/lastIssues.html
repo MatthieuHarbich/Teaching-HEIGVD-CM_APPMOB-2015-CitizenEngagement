@@ -1,0 +1,40 @@
+
+
+<ion-view view-title="Last Issues">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-gear-a"></button>
+  </ion-nav-buttons>
+
+
+  <ion-content>
+
+
+
+     <ion-list>
+        <div ng-repeat="issue in issues">
+          <ion-item class="item-stable"
+                    ng-click="toggleIssue(issue)"
+                    ng-class="{active: isIssueShown(issue)}">
+              <i class="icon" ng-class="isIssueShown(issue) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+           {{issue.issueType.name}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    
+              ng-show="isIssueShown(issue)">
+            <img class="lastIssueImg" src="{{issue.imageUrl}}" alt="">
+
+            <div class="lastIssueDetails">
+              <h2>{{issue.owner.name}}</h2>
+              <p class="lastIssueDescription">{{issue.description}}</p>
+            </div>
+
+          </ion-item>
+        </div>
+      </ion-list>
+
+
+
+  </ion-content>
+</ion-view>

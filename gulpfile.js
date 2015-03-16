@@ -1,3 +1,5 @@
+var replace = require('gulp-replace');
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
@@ -34,6 +36,30 @@ gulp.task('install', ['git-check'], function() {
     .on('log', function(data) {
       gutil.log('bower', gutil.colors.cyan(data.id), data.message);
     });
+});
+
+function saveConfig(environment) {
+
+  var config = require('./config/' + environment + '.json');
+
+  // Use `constants.js` as the source.
+  gulp.src(['constants.js'])
+
+    // Replace all occurrences of @apiUrl@.
+    .pipe(replace(/@apiUrl@/, config.apiUrl))
+    .pipe(replace(/@mapboxMapId@/, config.mapboxMapId))
+    .pipe(replace(/@mapboxAccessToken@/, config.mapboxAccessToken))
+
+    // Save the result in www/js.
+    .pipe(gulp.dest('www/js'));
+}
+
+gulp.task('config-development', function(){
+  saveConfig('development');
+});
+
+gulp.task('config-production', function(){
+  saveConfig('production');
 });
 
 gulp.task('git-check', function(done) {

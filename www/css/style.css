@@ -1,1 +1,31 @@
 /* Empty. Add your own CSS if you like */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.lastIssueImg{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	width:20px;
+	float:left;
+}
+
+.lastIssueDescription{
+	/*float:left;*/
+}
+
+.lastIssueDetails{
+	margin-top:10px;
+	float:left;
+}
