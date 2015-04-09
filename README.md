@@ -1,5 +1,6 @@
 #Matthieu Harbich - MM41
-## Comment utiliser mon application? 
+## Comment utiliser mon application?
+(setup/ui-structure.png)
 ### Login
 Cette page est la première lorsqu'on arrive sur l'application. Elle a la fonctionnalité de logister, c'est-à-dire que si la personne n'est pas enregistrée, l'application va lui créer automatiquement un nouveau compte. Ce nouvel utilisateur aura alors le rôle de "citizen".
 Si une personne se connecte et qu'il a le rôle de staff parmis ses rôles, il alors plus de fonctionnalités que l'utilisateur simple "citizen". Un utilisateur peut biensûr être "citizen" et "staff" à la fois. 
