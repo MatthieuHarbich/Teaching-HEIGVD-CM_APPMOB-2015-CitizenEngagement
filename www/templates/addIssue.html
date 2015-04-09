@@ -1,5 +1,38 @@
-<ion-view view-title="Add Issues">
-  <ion-content>
-    <p>Hello! This is the Add Issue tab.</p>
+
+
+<ion-view view-title="Add Issue" ng-controller="MapController">
+
+  
+
+
+  <ion-content ng-controller="addIssueCtrl" scroll="false">
+	
+
+	<leaflet defaults="addDefaults" center="addCenter" height="100%" markers="addMarker"  data-tap-disabled="true"></leaflet>
+
+	<div class="addIssueForm" ng-controller="getIssueTypesCtrl">
+		<div  class="list">
+
+		  <label class="item item-input item-select">
+		    <div class="input-label">
+		      Issue Type
+		    </div>
+		    <select ng-model="newIssue.issueTypeId">
+		      <option  value="{{issueType.id}}" ng-repeat="issueType in issueTypes">{{issueType.name}}</option>
+		      
+		    </select>
+		  </label>
+		  <label  class="item item-input">
+		    <textarea ng-model="newIssue.description" placeholder="Description"></textarea>
+		  </label>
+		</div>
+
+	</div>
+
+
+	 <a href="" ng-click="addIssue()" class="plusButton button button-full ion-ios-baseball-outline button-balanced" ></a>
+	
   </ion-content>
+
+ 
 </ion-view>

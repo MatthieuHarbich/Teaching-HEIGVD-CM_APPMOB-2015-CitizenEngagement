@@ -1,10 +1,31 @@
-<ion-view view-title="Map">
+<ion-view  view-title="map" >
+ <ion-nav-buttons   side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+
+ <ion-nav-buttons  side="right" >
+    <button menu-toggle="right" class="button button-icon icon ion-ios-settings-strong"></button>
+  </ion-nav-buttons>
+  
 
   <ion-content scroll="false">
+   
+   <leaflet defaults="listDefaults" center="listCenter" height="100%" markers="listMarkersFiltered"  data-tap-disabled="true"></leaflet>
+  
+<!--   <input ng-model="filterText" style="position:fixed; z-index:1000; top: 300px;" type="text"> -->
     
-   <leaflet defaults="mapDefaults" center="mapCenter" height="100%" markers="mapMarkers"  data-tap-disabled="true"></leaflet>
-
-    
-
+	
   </ion-content>
+
+  <a href="#/app/addIssue"  class="plusButton button ion-plus button-full button-assertive" ></a>
+ 
+
+
+ 
+ 
+	</button>
 </ion-view>
+
+
+

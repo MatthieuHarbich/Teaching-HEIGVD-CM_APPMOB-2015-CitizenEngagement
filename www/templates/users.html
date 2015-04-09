@@ -1,0 +1,45 @@
+
+
+<ion-view view-title="Users">
+
+   <ion-nav-buttons  side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+ <ion-nav-buttons  side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-ios-settings-strong"></button>
+  </ion-nav-buttons>
+
+
+  <ion-content>
+
+
+
+     <ion-list>
+        <div ng-repeat="user in users">
+          <ion-item class="item-stable"
+                    ng-click="toggleUser(user)"
+                    ng-class="{active: isUserShown(user)}">
+              <i class="icon" ng-class="isUserShown(user) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+           {{user.firstname}}
+           {{user.lastname}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    
+              ng-show="isUserShown(user)">
+            
+
+            <div class="lastIssueDetails">
+              <h2>{{user.firstname}} {{user.lastname}}</h2>
+              <p class="lastIssueDescription" >Role(s): <span ng-repeat="role in user.roles">{{role}} </span></p>
+            </div>
+
+          </ion-item>
+        </div>
+      </ion-list>
+
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,42 @@
+
+<ion-view view-title="Issue detail">
+
+  
+
+<!--  <ion-nav-buttons  side="right">
+    <button menu-toggle="right" class="button button-icon icon ion-ios-settings-strong"></button>
+  </ion-nav-buttons> -->
+
+  <ion-content>
+	<h3 class="issueDetailTitle">{{issueById.issueType.name}}</h3>
+	<img class="issueDetailImage" src="{{issueById.imageUrl}}" alt="">
+	<h4 id="h4">Owner:</h4>
+	<div id="issueDetailDescription">{{issueById.owner.name}}</div>
+	<h4 id="h4">Description:</h3>
+	<div id="issueDetailDescription">{{issueById.description}}</div>
+	<h4 id="h4">Comments:</h4>
+	<div class="margin-top list">
+
+			<div class="item itemComment" ng-repeat="comment in issueById.comments">
+				<h3>{{comment.author.name}}</h3>
+				{{comment.text}}
+		 	</div>
+		  
+
+
+	</div>
+
+	
+</ion-content>
+<div class="addCommentitem item-input-inset">
+		    <label class="item-input-wrapper">
+		      <input type="text" ng-model="newComment" placeholder="Your comment">
+		    </label>
+		    <button class="button button-small" ng-click="addComment(newComment)">
+		      Send
+		    </button>
+		  </div>
+
+  
+ 
+</ion-view>

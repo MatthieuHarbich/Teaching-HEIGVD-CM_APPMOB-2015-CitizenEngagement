@@ -37,6 +37,8 @@ angular.module('citizen-engagement.auth', ['angular-storage'])
       // Forget the previous error (if any).
       delete $scope.error;
 
+      
+
       // Show a loading message if the request takes too long.
       $ionicLoading.show({
         template: 'Logging in...',
@@ -64,7 +66,7 @@ angular.module('citizen-engagement.auth', ['angular-storage'])
         });
 
         // Go to the issue creation tab.
-        $state.go('tab.map');
+        $state.go('app.map');
 
       }).error(function() {
 
@@ -76,9 +78,10 @@ angular.module('citizen-engagement.auth', ['angular-storage'])
   })
 
   .controller('LogoutCtrl', function(AuthService, $scope, $state) {
+    
     $scope.logOut = function() {
       AuthService.unsetUser();
-
+      console.log('logout');
       $state.go('login');
     };
 

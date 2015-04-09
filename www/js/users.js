@@ -37,6 +37,18 @@ angular.module('citizen-engagement.users', [])
 			}
 		});
 
+		$scope.toggleUser = function(user) {
+      if ($scope.isUserShown(user)) {
+        $scope.shownUser = null;
+      } else {
+        $scope.shownUser = user;
+      }
+    };
+
+  $scope.isUserShown = function(user) {
+    return $scope.shownUser === user;
+  };
+
 		
 	})
 
@@ -60,6 +72,11 @@ angular.module('citizen-engagement.users', [])
 			$scope.isStaff = function() {
 
 	      	return ($scope.user.roles.indexOf('staff') > -1);
+	      };
+
+	      $scope.isCitizen = function() {
+
+	      	return ($scope.user.roles.indexOf('citizen') > -1);
 	      };
 			
 		});

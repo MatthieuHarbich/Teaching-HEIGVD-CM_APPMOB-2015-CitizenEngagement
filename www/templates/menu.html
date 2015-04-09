@@ -1,0 +1,61 @@
+<ion-side-menus ng-controller="listIssuesCtrl">
+
+  <ion-pane ion-side-menu-content >
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="app-map" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+<div>
+  <ion-side-menu  side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 ng-if="isStaff()" class="title">Staff menu</h1>
+      <h1 ng-if="!isStaff()" class="title">Menu</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item ng-show="isStaff()" nav-clear menu-close href="#/app/map">
+          Map
+        </ion-item>
+        <ion-item ng-show="isStaff()" nav-clear menu-close href="#/app/lastIssues">
+          Last Issues
+        </ion-item>
+        <ion-item ng-show="isStaff()" nav-clear menu-close href="#/app/users">
+          Users
+        </ion-item>
+
+         
+          <button nav-clear ng-controller="LogoutCtrl" menu-close ng-click="logOut()" class="button button-full button-assertive">Logout</button>
+        
+        
+        
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+</div>
+  <ion-side-menu  ng-controller="filterCtrl" side="right">
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input ng-model="filterText" ng-keyup="handleKeyUp(filterText)" type="search" placeholder="Search">
+      </label>
+    
+    </div>
+
+    <ion-content class="has-header">
+      <ion-list>
+        
+        <ion-item menu-toggle="right"  ng-repeat="issue in issues | filter:filterText" ng-href="#/app/issueDetail/{{issue.id}}" ><img style="float:left; margin-right:8px;" src="{{issue.imageUrl}}" height="40px" width="40px" alt=""> <h3>{{issue.owner.name}} :</h3> <p>{{issue.issueType.name}}</p></ion-item>  
+        
+
+        
+       
+        
+        
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
