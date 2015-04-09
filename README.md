@@ -4,8 +4,26 @@
 Cette page est la première lorsqu'on arrive sur l'application. Elle a la fonctionnalité de logister, c'est-à-dire que si la personne n'est pas enregistrée, l'application va lui créer automatiquement un nouveau compte. Ce nouvel utilisateur aura alors le rôle de "citizen".
 Si une personne se connecte et qu'il a le rôle de staff parmis ses rôles, il alors plus de fonctionnalités que l'utilisateur simple "citizen". Un utilisateur peut biensûr être "citizen" et "staff" à la fois. 
 
+## Pour les "citizen"
 ### La map
-La première fenêtre pour les 
+C'est la page sur laquelle on arrive une fois qu'on est loggé. Une map prend alors tout l'écran, avec un boutton "+" en bas, et un header en haut qui comporte deux menus qui se glissent.
+La map géolocalise l'utilisateur de l'application et centre la map sur sa position. Sa position est définie par un point rouge. L'utilisateur peut alors voir toutes les issues qui l'entourent, en cliquant sur les marqueurs pour voir plus de détails par exemple.
+Le menu en haut à droite est un menu qui se glisse et qui permet à l'utilisateur de pouvoir avoir la liste de toutes les issues. Un champ de recherche est disponible en haut de cette liste afin de filtrer avec du text, selon le nom de l'auteur, et des types de problèmes. En cliquant sur une des issue, ou alors sur la photo de la popup sur la carte, on arrive alors sur une nouvelle fenêtre qui est le détail de l'issue.
+
+### Détail de l'issue
+Cette page permet d'avoir de plus amples informations sur l'issue en question, mais surtout de pouvoir commenter et voir les commentaires des gens. 
+
+### Ajout d'une issue
+Lorsqu'on est sur la page de la map, en un clic il est possible d'accéder à l'ajout d'une nouvelle issue. Lors du clic sur le boutton "+", l'appareil photo s'ouvre et on DOIT prendre une photo afin de pouvoir passer à l'étape suivante. 
+Ensuite il y a un marqueur qui peut être déplacé afin de permettre à l'utilisateur d'être complétement précis sur la position de l'issue.
+On peut ensuite sélectionner dans une liste déroulante quel type d'issue c'est, avant d'écrire une description. 
+Il suffit d'appuyer sur le boutton vert (avec une balle de base-ball) pour que l'issue s'ajoute. On revient automatiquement sur la map avec la nouvelle issue disponible.
+
+## Pour les staff
+### Menu staff
+Lorsqu'on est sur la map, il y a un menu en haut à gauche de la fenêtre qui permet d'avoir une menu personnalisé pour les "citizen" et pour les "staff". Pour le moment, il n'y a pas de fonctionnalités particulières pour les "citizen", mais pour les staff, il est possible de lister les issues avec comme première en haut de la liste, la plus vieille, afin qu'elle ne soit pas oubliée. 
+Le but de cette page est de pouvoir dérouler une issue pour pouvoir y faire des actions (changer le statut de l'issue).
+Il y a environ la même chose pour les users, mais il serait ici possible de définir les rôles de ceux-ci lorsqu'on est un "staff". 
 
 # Citizen Engagement Mobile Application
 
