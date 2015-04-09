@@ -1,19 +1,20 @@
 <ion-view view-title="Citizen Engagement">
-  <ion-content class="padding">
+  <ion-content class="padding login">
 
     <!-- A banner. Choose an image and save it as www/img/banner.jpg -->
-    <img src="img/banner.jpg" width="100%" alt="Citizen Engagement" />
-
+     <!-- <img class="imgLogin" src="img/banner.jpg" width="100%" alt="Citizen Engagement" />  -->
+  
     <!-- A short welcome message. -->
-    <div class="card">
+    <!-- <div class="card">
       <div class="item item-text-wrap">
         Welcome to Citizen Engagement!
         Please register to use the application.
       </div>
     </div>
-
+ -->
+ <div class="loginPage">
     <!-- The login form that the citizen must fill. -->
-    <form name="loginForm">
+    <form class="loginForm" name="loginForm">
 
       <!-- Ionic uses lists to group related input elements. -->
       <div class="list">
@@ -35,6 +36,6 @@
         The "ng-disabled" directive is used to disable the button if the form is invalid (i.e. the first name or last name is missing).
       -->
       <button class="button button-full button-positive" ng-click="register()" ng-disabled="loginForm.$invalid">Register</button>
-    </form>
+    </form></div>
   </ion-content>
 </ion-view>

@@ -146,12 +146,17 @@ angular.module('citizen-engagement.issue', [])
     }
   })
 
-  .controller("MapController", function($filter, mySharedFilter,IssueFactory,mapboxMapId, geolocation, CameraService, mapboxAccessToken, $scope, $state) {
+  .controller("MapController", function($filter, mySharedFilter,IssueFactory,mapboxMapId, geolocation, CameraService, mapboxAccessToken, $scope, $state, $timeout, $rootScope) {
        
+      $scope.$on('$ionicView.beforeEnter', function(){
+        $timeout(function(){
+          $scope.$broadcast('invalidateSize');
+        })
+      })
        $scope.mapCenter = {};
        $scope.mapCenter.lat = {}; 
        $scope.mapCenter.lng = {}; 
-      $scope.$on('$ionicView.beforeEnter', function() {
+      
       
             geolocation.getLocation().then(function(data) {
           $scope.mapCenter.lat = data.coords.latitude;
@@ -168,7 +173,7 @@ angular.module('citizen-engagement.issue', [])
         });
     
           
-      });
+      
 
       
       
@@ -237,7 +242,7 @@ angular.module('citizen-engagement.issue', [])
         lat: $scope.mapCenter.lat,
        lng: $scope.mapCenter.lng,
        icon: {
-            iconUrl: '..//img/center.png',
+            iconUrl: 'img/center.png',
              iconSize:     [15, 15] // size of the icon
             
         }
