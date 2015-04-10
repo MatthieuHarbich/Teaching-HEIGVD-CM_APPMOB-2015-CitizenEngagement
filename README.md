@@ -1,21 +1,25 @@
 #Matthieu Harbich - MM41
 ## Comment utiliser mon application?
-![UI Design](setup/ui-structure.png)
-(https://www.fluidui.com/editor/live/preview/p_bK038hItMrt8WnBP3PoHvfA5OdMtWLPS.1425646707110)
+
 ### Login
+![UI Design](setup/login.png)
 Cette page est la première lorsqu'on arrive sur l'application. Elle a la fonctionnalité de logister, c'est-à-dire que si la personne n'est pas enregistrée, l'application va lui créer automatiquement un nouveau compte. Ce nouvel utilisateur aura alors le rôle de "citizen".
 Si une personne se connecte et qu'il a le rôle de staff parmis ses rôles, il alors plus de fonctionnalités que l'utilisateur simple "citizen". Un utilisateur peut biensûr être "citizen" et "staff" à la fois. 
 
 ## Pour les "citizen"
 ### La map
+![UI Design](setup/map.png)
 C'est la page sur laquelle on arrive une fois qu'on est loggé. Une map prend alors tout l'écran, avec un boutton "+" en bas, et un header en haut qui comporte deux menus qui se glissent.
 La map géolocalise l'utilisateur de l'application et centre la map sur sa position. Sa position est définie par un point rouge. L'utilisateur peut alors voir toutes les issues qui l'entourent, en cliquant sur les marqueurs pour voir plus de détails par exemple.
+![UI Design](setup/right.png)
 Le menu en haut à droite est un menu qui se glisse et qui permet à l'utilisateur de pouvoir avoir la liste de toutes les issues. Un champ de recherche est disponible en haut de cette liste afin de filtrer avec du text, selon le nom de l'auteur, et des types de problèmes. En cliquant sur une des issue, ou alors sur la photo de la popup sur la carte, on arrive alors sur une nouvelle fenêtre qui est le détail de l'issue.
 
 ### Détail de l'issue
+![UI Design](setup/detail.png)
 Cette page permet d'avoir de plus amples informations sur l'issue en question, mais surtout de pouvoir commenter et voir les commentaires des gens. 
 
 ### Ajout d'une issue
+![UI Design](setup/add.png)
 Lorsqu'on est sur la page de la map, en un clic il est possible d'accéder à l'ajout d'une nouvelle issue. Lors du clic sur le boutton "+", l'appareil photo s'ouvre et on DOIT prendre une photo afin de pouvoir passer à l'étape suivante. 
 Ensuite il y a un marqueur qui peut être déplacé afin de permettre à l'utilisateur d'être complétement précis sur la position de l'issue.
 On peut ensuite sélectionner dans une liste déroulante quel type d'issue c'est, avant d'écrire une description. 
